@@ -8,7 +8,8 @@ information, read https://blog.fastmail.com/2015/12/03/the-search-for-a-faster-c
 
 ## implementations
 
-- *cyrus*: The old, slow [fallback implementation inside Cyrus](https://github.com/robn/cyrus-imapd/blob/1f19b582295691fc56b76ee43377defb17869ecf/lib/crc32.c).
+- *oldcyrus*: The old, slow fallback implementation from Cyrus.
+- *cyrus*: The current Cyrus implementation, a combo slice-by-16/slice-by-8 depending on input buffer size.
 - *kernel*: Kernel implementation via the Crypto API. Internally it uses the PLCMULQDQ CPU instruction, with fallback to slice-by-8.
 - *slice4*, *slice8*, *slice16*: table-based slice-by-N, all from [Stephan Brumme's CRC32 collection](http://create.stephan-brumme.com/crc32/). Each increase in N adds more tables and unrolls loops further, relying more and more on a modern CPU's ability to parallelise work.
 - *slice16-prefetch*: same as *slice16* but with a strategically-placed instruction to force the CPU to bring the next 256 bytes into the CPU cache while it's doing the math.
