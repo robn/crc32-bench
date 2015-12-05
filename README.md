@@ -4,7 +4,7 @@ A bench test for various CRC32 implementations.
 
 This was built so we could test CRC32 performance with a view to replacing the
 implementation used inside [Cyrus IMAP](https://cyrusimap.org/). For more
-information, read https://blog.fastmail.com/2015/12/03/...
+information, read https://blog.fastmail.com/2015/12/03/the-search-for-a-faster-crc32/
 
 ## implementations
 
