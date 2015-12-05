@@ -24,5 +24,8 @@ bench-oldcyrus: bench.o bench-init.o crc32-oldcyrus.o
 bench-cyrus: bench.o bench-init.o crc32-cyrus.o
 	$(CC) -o $@ $^
 
+mkslicetables: mkslicetables.o
+	$(CC) -o $@ $^
+
 clean:
 	rm -f $(BENCHES) *.o

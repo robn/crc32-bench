@@ -32,6 +32,14 @@ If you don't, link `bench-init.o`, which has stubs for these functions.
 
 See `Makefile` for more info.
 
+## mkslicetables
+
+There's also a tool included called `mkslicetables`, which can generate tables for use with the slice-by-N algorithms.
+
+    make mkslicetables
+    ./mkslicetables 0xedb88320 > crc32-tables-standard.h
+    ./mkslicetables 0x82f63b78 > crc32-tables-castagnoli.h
+
 ## copyright and license
 
 - The *slice* implementations are [Copyright © 2014 Stephan Brumme](http://create.stephan-brumme.com/disclaimer.html).
